@@ -225,11 +225,11 @@ RUN echo "## Internal Testing of image (not-activated)" \
 # Copy this Dockerimage into image, so that it will be possible to recreate it later
 COPY Dockerfile /emsdk/dockerfiles/emscripten-core/emsdk/
 
-LABEL maintainer="kontakt@trzeci.eu" \
+LABEL maintainer="aaronngray@gmail" \
       org.label-schema.name="emscripten" \
-      org.label-schema.description="The official container with Emscripten SDK" \
+      org.label-schema.description="An unofficial container with Emscripten SDK" \
       org.label-schema.url="https://emscripten.org" \
-      org.label-schema.vcs-url="https://github.com/emscripten-core/emsdk" \
+      org.label-schema.vcs-url="https://github.com/aaronngray/emsdk" \
       org.label-schema.docker.dockerfile="/docker/Dockerfile"
 
 # ------------------------------------------------------------------------------

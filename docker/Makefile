@@ -4,18 +4,18 @@
 # i.e.:  1.38.45, 1.38.45-upstream
 version =
 alias =
-
+account=aaronngray
 .TEST:
 ifndef version
 	$(error argument 'version' is not set. Please call `make version=SOME_VERSION ...`)
 endif
 
 build: .TEST
-	docker build --build-arg=EMSCRIPTEN_VERSION=${version} --tag emscripten/emscripten:${version} .
+	docker build --build-arg=EMSCRIPTEN_VERSION=${version} --tag ${account}/emscripten:${version} .
 
 push: .TEST
-	docker push emscripten/emscripten:${version}
+	docker push ${account}/emscripten:${version}
 ifdef alias
-	docker tag emscripten/emscripten:${version} emscripten/emscripten:${alias}
-	docker push emscripten/emscripten:${alias}
+	docker tag ${account}/emscripten:${version} ${account}/emscripten:${alias}
+	docker push ${account}/emscripten:${alias}
 endif
